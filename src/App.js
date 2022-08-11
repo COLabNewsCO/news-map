@@ -257,7 +257,7 @@ function App() {
                       <p className='summary__demographics'><strong>Demographics</strong></p>
                       <Race feature={summary} />
                     </Col>
-                  </Row>                  
+                  </Row>                 
                 </div>
               )}
           </Col>
@@ -372,6 +372,7 @@ function App() {
               (<Details data-testid='statewide' mainstream={ details } />)
             }
           </Col>
+          <p className='summary__footnote'><small>Source: County population data are from the 2020 U.S. decennial census. Racial demographics data are from the American Community Survey, 2016-2020.</small></p>
         </Row>
       </Container>
     );
