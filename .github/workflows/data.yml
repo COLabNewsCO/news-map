@@ -47,5 +47,12 @@ jobs:
           git commit -m "Latest data: ${timestamp}" || exit 0
           git push origin HEAD
 
-      - name: Fresh deploy
-        run: npm run deploy
+      - name: Build app
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          exclude_assets: '.github,ratings.json'
