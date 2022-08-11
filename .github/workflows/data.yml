@@ -4,8 +4,8 @@ name: Pull data
 # Controls when the workflow will run
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron:  '*/6 * * * *' # Every 10 minutes. Ref https://crontab.guru/examples.html
+  schedule:
+    - cron:  '*/6 * * * *' # Every 6 minutes. Ref https://crontab.guru/examples.html
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -47,8 +47,5 @@ jobs:
           git commit -m "Latest data: ${timestamp}" || exit 0
           git push origin HEAD
 
-      # # Runs a set of commands using the runners shell
-      # - name: Run a multi-line script
-      #   run: |
-      #     echo Add other actions to build,
-      #     echo test, and deploy your project.
+      - name: Fresh deploy
+        run: npm run deploy
