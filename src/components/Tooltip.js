@@ -5,8 +5,6 @@ const Tooltip = ({ feature }) => {
   const { properties } = feature;
 
   if (properties.hasOwnProperty('Original') && properties.hasOwnProperty('Local')) {
-    const totalOriginal = properties['Original'] + properties['Not Original'];
-
     return (
       <div id={`tooltip-${id}`}>
         <h4 className='tooltip__hed'><strong>{ properties.NAME } County</strong></h4>

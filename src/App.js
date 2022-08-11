@@ -16,7 +16,6 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 import Form from 'react-bootstrap/Form';
-import Table from 'react-bootstrap/Table';
 import { Typeahead } from 'react-bootstrap-typeahead'; 
 
 import axios from 'axios';
@@ -127,15 +126,6 @@ function App() {
     });
   }
 
-  const searchHandler = (e) => {
-    const searchData = allData.filter(d => d['OUTLET'].toLowerCase().indexOf(e.target.value) > -1);
-
-    setDetails({ 
-      header: '', 
-      data: searchData
-    });
-  };
-
   const filterChange = (key, value) => {
     const updatedValues = {};
     updatedValues[key] = value;
@@ -189,7 +179,7 @@ function App() {
       });
     }
 
-  }, [filterOptions]);
+  }, [allData, filterOptions]);
 
   let colorArray = [
     'step', 
