@@ -213,7 +213,7 @@ function App() {
       <Container fluid>
         <Row>
           <h1 className='App__hed bold'>Colorado News Map</h1>
-          <div className='map__subhed'>Click or tap on a county to learn more about its news ecosystem.</div>
+          <div className='map__subhed'>Click or tap on a county to learn more about its news and information ecosystem.</div>
           <Legend />
         </Row>
         <Row>
@@ -258,9 +258,9 @@ function App() {
         <Row>
           <Col>
             <div className="button-filters">
-              <Button onClick={e => buttonHandler(e, 'STATEWIDE') } variant="outline-dark" className='filter-table-btn'>Statewide publications</Button>
-              <Button onClick= {e => buttonHandler(e, 'COLab') } variant="outline-dark" className='filter-table-btn'>COLab publications</Button>
-              <Button onClick= {e => buttonHandler(e, 'CPA') } variant="outline-dark" className='filter-table-btn'>CPA publications</Button>
+              <Button onClick={e => buttonHandler(e, 'STATEWIDE') } variant="outline-dark" className='filter-table-btn'>Statewide outlets</Button>
+              <Button onClick= {e => buttonHandler(e, 'COLab') } variant="outline-dark" className='filter-table-btn'>COLab partners</Button>
+              <Button onClick= {e => buttonHandler(e, 'CPA') } variant="outline-dark" className='filter-table-btn'>CPA members</Button>
               <Button onClick= {e => buttonHandler(e, 'All') } variant="outline-dark" className='filter-table-btn'>Show all</Button>
             </div>
           </Col>

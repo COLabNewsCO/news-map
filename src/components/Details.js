@@ -22,11 +22,15 @@ const sortReach = (rowA, rowB) => {
 };
 
 const MissionComponent = ({ data }) => {
-   return(
+   if (data.MISSION.length) {
+    return(
       <div className='expanded'>
         <p className='expanded__mission'>{ data.MISSION }</p>
+        <p className='expanded__mission'>{ data.Description }</p>
       </div>
     )
+    return null;
+   };
 };
 
 function Details(props) {
@@ -36,15 +40,15 @@ function Details(props) {
     const tableDataItems = data.map(item => {
       let disabled = item.MISSION.length > 0 ? false : true;
       return { ...item, disabled };
-    })
+    });
 
     const columns = [
       {
         name: 'Outlet',
         selector: row => row.OUTLET,
-        // cell: row => (
-        //     <a href={row['WEB']}>{ row['OUTLET'] }</a>
-        //   )
+        cell: row => (
+            <a target='_parent' href={row['WEB']}>{ row['OUTLET'] }</a>
+          )
       },
       {
         name: 'County',
@@ -70,7 +74,7 @@ function Details(props) {
       {
         name: 'Ownership',
         selector: row => row.OWTYPE,
-        sortable: false,
+        sortable: true,
       },
       {
         name: 'Reach',
@@ -78,12 +82,6 @@ function Details(props) {
         sortable: true,
         sortFunction: sortReach
       },
-      // {
-      //   name: 'Mission',
-      //   selector: row => row.MISSION
-      //   // sortable: true,
-      //   // sortFunction: sortReach
-      // }
     ];
 
     return (
@@ -99,6 +97,7 @@ function Details(props) {
           expandableRows 
           expandableRowsComponent={ MissionComponent }
           expandableRowDisabled={ row => row.disabled }
+          // expandableRowsHideExpander={ row => row.disabled }
         />
       </div>
     );

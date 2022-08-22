@@ -171,6 +171,12 @@
     font-size: .95em;
   }
 
+  .rdt_TableRow {
+    button[aria-disabled='true'] {
+      display: none;
+    }
+  }
+
   .expanded {
     &__mission {
       font-size: .8em;
