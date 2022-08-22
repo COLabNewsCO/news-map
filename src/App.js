@@ -64,10 +64,10 @@ function App() {
           setShapeFile(shapeData);
 
           setFormOptions({
-            language: [...new Set(parsedMain.map(d => d['NON-ENGLISH/ BIPOC-SERVING']))],
-            county: [...new Set(parsedMain.map(d => d.COUNTY))],
-            ownership: [...new Set(parsedMain.map(d => d.OWTYPE))],
-            sector: [...new Set(parsedMain.map(d => d.SECTOR))],
+            language: [...new Set(parsedMain.map(d => d['NON-ENGLISH/ BIPOC-SERVING']))].sort(),
+            county: [...new Set(parsedMain.map(d => d.COUNTY))].sort(),
+            ownership: [...new Set(parsedMain.map(d => d.OWTYPE))].sort(),
+            sector: [...new Set(parsedMain.map(d => d.SECTOR))].sort(),
           });
 
           setDetails({ 
@@ -197,13 +197,13 @@ function App() {
     id: 'colorado',
     type: 'fill',
     paint: {
-      'fill-outline-color': '#d3d3d3',
+      'fill-outline-color': '#fafafa',
       'fill-color': colorArray,
       'fill-opacity': [
         'case',
         ['boolean', ['feature-state', 'hover'], false],
         0.3,
-        0.85,
+        0.7,
       ],
     }
   };
