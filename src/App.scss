@@ -30,9 +30,22 @@
 }
 
 .map {
+  position: relative; 
+
   &__subhed {
     font-weight: bold;
     font-size: .95em;
+  }
+
+  &__reset {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+
+    @media screen and (min-width: 800px) {
+      bottom: 5%;
+      right: 1%;
+    }
   }
 }
 
@@ -77,6 +90,7 @@
 .legend {
   display: flex;
   margin-bottom: .25em;
+  flex-wrap: wrap;
 
   @media screen and (min-width: 768px) {
     margin-bottom: .5em;  

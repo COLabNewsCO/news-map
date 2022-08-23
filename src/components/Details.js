@@ -75,8 +75,7 @@ function Details(props) {
       {
         name: 'Language',
         selector: row => row['NON-ENGLISH/ BIPOC-SERVING'],
-        // sortable: true,
-        // sortFunction: sortReach
+        sortable: true,
       },
       {
         name: 'Owner',
