@@ -20,6 +20,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 
 import axios from 'axios';
 import { addData, processSheet, lookupRef } from './utils';
+import { group } from 'd3-array';
 import { initFrame } from '@newswire/frames';
 
 import './App.scss';
@@ -63,11 +64,17 @@ function App() {
           setLookup(lookupRef(parsedMain, 'COUNTY', 'SECTOR'));
           setShapeFile(shapeData);
 
+          const sectorOptions = Array.from(group(parsedMain, d => d.SECTOR))
+            .sort((a, b) => b[1].length - a[1].length)
+            .map(d => d[0]);
+
+          // console.log(sectorOptions)
+
           setFormOptions({
             language: [...new Set(parsedMain.map(d => d['NON-ENGLISH/ BIPOC-SERVING']))].sort(),
             county: [...new Set(parsedMain.map(d => d.COUNTY))].sort(),
             ownership: [...new Set(parsedMain.map(d => d.OWTYPE))].sort(),
-            sector: [...new Set(parsedMain.map(d => d.SECTOR))].sort(),
+            sector: sectorOptions,
           });
 
           setDetails({ 

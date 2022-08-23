@@ -41,6 +41,12 @@
     position: absolute;
     bottom: 1%;
     right: 1%;
+    background: $theme-blue !important;
+    color: $text-light !important;
+
+    &:hover {
+      opacity: 0.75;
+    }
 
     @media screen and (min-width: 800px) {
       bottom: 5%;
