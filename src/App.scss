@@ -110,6 +110,20 @@
   &__hed {
     font-size: 1.2rem;
   }
+
+  &__note {
+    font-size: .8em;
+  }
+
+  &__cred {
+    margin-right: .4em;
+    width: .8em;
+    height: .8em;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: $cred;
+    // vertical-align: middle;
+  }
 }
 
 .source {
@@ -183,6 +197,18 @@
     &__mission {
       font-size: .8em;
       margin-top: .5em;
+    }
+  }
+
+  .outlet {
+    &__cred {
+      margin-left: 10px;
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: $cred;
+      vertical-align: middle;
     }
   }
 }

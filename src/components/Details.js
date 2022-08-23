@@ -33,6 +33,20 @@ const MissionComponent = ({ data }) => {
    };
 };
 
+const isCredentialed = (row) => {
+  const creds = [ row.CPA, row.CBA, row.COLab ];
+  
+  if (creds.some(el => el.length)) {
+    return (
+      <div>
+        <a target='_parent' className='outlet__link' href={row['WEB']}>{ row['OUTLET'] }</a>
+        <span className="outlet__cred"></span>
+      </div>
+    )
+  }
+  return <a target='_parent' className='outlet__link' href={row['WEB']}>{ row['OUTLET'] }</a>;
+};
+
 function Details(props) {
   if (props.mainstream.data.length) {
     const { data, header } = props.mainstream;
@@ -46,9 +60,7 @@ function Details(props) {
       {
         name: 'Outlet',
         selector: row => row.OUTLET,
-        cell: row => (
-            <a target='_parent' href={row['WEB']}>{ row['OUTLET'] }</a>
-          )
+        cell: row => isCredentialed(row)
       },
       {
         name: 'County',
@@ -97,8 +109,11 @@ function Details(props) {
           expandableRows 
           expandableRowsComponent={ MissionComponent }
           expandableRowDisabled={ row => row.disabled }
-          // expandableRowsHideExpander={ row => row.disabled }
         />
+
+        <p className="details__note">
+          <span className="details__cred outlet__cred"></span> indicates credentialed outlets.
+        </p>
       </div>
     );
   } else {
