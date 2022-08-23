@@ -9,9 +9,9 @@ const Tooltip = ({ feature }) => {
       <div id={`tooltip-${id}`}>
         <h4 className='tooltip__hed'><strong>{ properties.NAME } County</strong></h4>
         <p className='tooltip__text'><strong>Total news sources:</strong> { properties.total_sources }</p>      
-        <p className='tooltip__text'><strong>Originality of news sources:</strong></p> 
+        <p className='tooltip__text'><strong>Originality of news stories:</strong></p> 
         <p className='tooltip__text'>{ properties['Original'] } original and { properties['Not Original'] } non-original stories.</p>
-        <p className='tooltip__text'><strong>Locality of news sources:</strong></p>
+        <p className='tooltip__text'><strong>Locality of news stories:</strong></p>
         <p className='tooltip__text'>{ properties['Local'] } local and { properties['Not Local'] } non-local stories.</p>
       </div>
     );
