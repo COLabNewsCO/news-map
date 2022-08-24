@@ -66,20 +66,27 @@ async function main() {
   for (let i = 0; i < spreadsheetId.length; i++) {
     console.log(spreadsheetId[i]);
     
-    const results = await sheets.spreadsheets.values.get({
+    const results = await sheets.spreadsheets.get({
       spreadsheetId: spreadsheetId[i],
-      range: ranges[i],
+      ranges: ranges[i],
+      includeGridData: true,
     });
 
-    const rows = results.data.values;
-    const headers = rows[0];
-    const records = rows.slice(1)
-      .map(values => zipObject(headers, values));
-    
-    const data = !i ? processMainData(records) : records;
-    const fp = 'public/' + outFileNames[i];
+    if (!i) {
+      fs.writeFileSync('test.json', JSON.stringify(results, null, 2));
+    }
 
-    fs.writeFileSync(fp, JSON.stringify({ data }));
+    // console.log(JSON.stringify(results, null, 2));
+
+    // const rows = results.data.values;
+    // const headers = rows[0];
+    // const records = rows.slice(1)
+    //   .map(values => zipObject(headers, values));
+    
+    // const data = !i ? processMainData(records) : records;
+    // const fp = 'public/' + outFileNames[i];
+
+    // fs.writeFileSync(fp, JSON.stringify({ data }));
   }
 }
 
