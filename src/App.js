@@ -226,10 +226,9 @@ function App() {
           <p className="App__desc">Learn more about the map, methodology, partners, and funders <a href="https://colabnews.co/colorado-news-mapping-project" target='_parent'>here</a>.</p>
           
           <ul>
-            <li className="map__subhed">
-            <p><strong>Hover over each county</strong> to see the number of local information sources identified to date, and the number of original, local news stories produced by some of the news sources in that county, in total,   on a single weekday in 2021.</p>
+            <li><p className="App__desc"><strong>Hover over each county</strong> to see the number of local information sources identified to date, and the number of original, local news stories produced by some of the news sources in that county, in total,   on a single weekday in 2021.</p>
             </li>
-            <li className="map__subhed"><p><strong>Click or tap on a county</strong> to learn more about its news and information ecosystem and demographics, and to see a full list of the news sources we’ve identified to date along with media type, sector, ownership, language, and reach (if we know it).</p></li>
+            <li><p className="App__desc"><strong>Click or tap on a county</strong> to learn more about its news and information ecosystem and demographics, and to see a full list of the news sources we’ve identified to date along with media type, sector, ownership, language, and reach (if we know it).</p></li>
           </ul>
 
           <p className="App_desc"><strong>Did we miss something? Did you find an error?</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY3GCM61wsEVdEUpEJ6x6yErooyerovADATMby-IR7wdtkxQ/viewform" target='_parent'>this form</a> and let us know, so we can add or fix it. NOTE: News sources are placed on the map according to their physical address. Some counties might not show a source serving it because the publication’s address could be in a county next door. </p>
