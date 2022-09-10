@@ -219,8 +219,23 @@ function App() {
     return (
       <Container fluid>
         <Row>
-          <h1 className='App__hed bold'>Colorado News Map</h1>
-          <div className='map__subhed'>Click or tap on a county to learn more about its news and information ecosystem.</div>
+          <h1 className='App__hed bold'>Colorado News Mapping Project</h1>
+          <p className="App__desc">Where do Coloradans find their local news and community information, and what do we know about these sources? This map contains credentialed sources of local journalism — including newspapers, TV and radio stations, and digital news sites — and other sources that share or produce civic information — including community groups, organizational pages, or individuals.</p>
+          <p className="App__desc">This map is not complete, but is a work in progress. It was created by people from Colorado College, the University of Denver, Colorado Media Project, and the Colorado News Collaborative (COLab), Hearken, and others with support from the Online News Association.</p>
+
+          <p className="App__desc">Learn more about the map, methodology, partners, and funders <a href="https://colabnews.co/colorado-news-mapping-project" target='_parent'>here</a>.</p>
+          
+          <ul>
+            <li className="map__subhed">
+            <p><strong>Hover over each county</strong> to see the number of local information sources identified to date, and the number of original, local news stories produced by some of the news sources in that county, in total,   on a single weekday in 2021.</p>
+            </li>
+            <li className="map__subhed"><p><strong>Click or tap on a county</strong> to learn more about its news and information ecosystem and demographics, and to see a full list of the news sources we’ve identified to date along with media type, sector, ownership, language, and reach (if we know it).</p></li>
+          </ul>
+
+          <p className="App_desc"><strong>Did we miss something? Did you find an error?</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY3GCM61wsEVdEUpEJ6x6yErooyerovADATMby-IR7wdtkxQ/viewform" target='_parent'>this form</a> and let us know, so we can add or fix it. NOTE: News sources are placed on the map according to their physical address. Some counties might not show a source serving it because the publication’s address could be in a county next door. </p>
+
+          {/*<div className='map__subhed'><strong>Hover over each county</strong> to see the number of local information sources identified to date, and the number of original, local news stories produced by some of the news sources in that county, in total, on a single weekday in 2021.</div>
+          <div className='map__subhed'>Click or tap on a county to learn more about its news and information ecosystem and demographics, and to see a full list of the news sources we’ve identified to date along with media type, sector, ownership, language, and reach (if we know it).</div>*/}
           <Legend />
         </Row>
         <Row>
@@ -242,6 +257,7 @@ function App() {
 
                   <Row>
                     <Col sm={6}>
+                      <p className='summary__demographics'><strong>News Sources by Sector</strong></p>
                       <Sources 
                         type='mainstream' 
                         county={summary.properties.NAME} 
@@ -251,7 +267,7 @@ function App() {
                     </Col>
 
                     <Col sm={6}>
-                      <p className='summary__demographics'><strong>Demographics</strong></p>
+                      <p className='summary__demographics'><strong>County Demographics</strong></p>
                       <Race feature={summary} />
                     </Col>
                   </Row>                 
@@ -275,24 +291,7 @@ function App() {
 
         <div className="table-filter">
           <Row>
-            <Col xs={12} md={3}>
-              <Form.Group style={{ marginTop: '20px' }}>
-                <Form.Label>Language</Form.Label>
-                <Typeahead
-                  id="table-language-filter"
-                  className='table-filter__form table-filter__language'
-                  labelKey="name"
-                  multiple
-                  // onInputChange={(text, string) => {console.log(text,string)}}
-                  onChange={ (sel) => filterChange('language', sel) }
-                  options={formOptions.language}
-                  placeholder="Select a language"
-                  selected={filterOptions.language}
-                />
-              </Form.Group>
-            </Col>
-
-            <Col xs={12} md={3}>
+             <Col xs={12} md={3}>
               <Form.Group style={{ marginTop: '20px' }}>
                 <Form.Label>County</Form.Label>
                 <Typeahead
@@ -315,6 +314,40 @@ function App() {
 
             <Col xs={12} md={3}>
               <Form.Group style={{ marginTop: '20px' }}>
+                <Form.Label>Sector</Form.Label>
+                <Typeahead
+                  id="table-sector-filter"
+                  labelKey="sector"
+                  className='table-filter__form table-filter__sector'
+                  multiple
+                  onChange={(selected) => filterChange('sector', selected)}
+                  options={formOptions.sector}
+                  placeholder="Type of local news source"
+                  selected={filterOptions.sector}
+                />
+              </Form.Group>
+            </Col>
+
+            <Col xs={12} md={3}>
+              <Form.Group style={{ marginTop: '20px' }}>
+                <Form.Label>Language</Form.Label>
+                <Typeahead
+                  id="table-language-filter"
+                  className='table-filter__form table-filter__language'
+                  labelKey="name"
+                  multiple
+                  // onInputChange={(text, string) => {console.log(text,string)}}
+                  onChange={ (sel) => filterChange('language', sel) }
+                  options={formOptions.language}
+                  placeholder="Select a language"
+                  selected={filterOptions.language}
+                />
+              </Form.Group>
+            </Col>
+           
+
+            <Col xs={12} md={3}>
+              <Form.Group style={{ marginTop: '20px' }}>
                 <Form.Label>Ownership</Form.Label>
                 <Typeahead
                   id="table-ownership-filter"
@@ -328,28 +361,12 @@ function App() {
                 />
               </Form.Group>
             </Col>
-
-            <Col xs={12} md={3}>
-              <Form.Group style={{ marginTop: '20px' }}>
-                <Form.Label>Sector</Form.Label>
-                <Typeahead
-                  id="table-sector-filter"
-                  labelKey="sector"
-                  className='table-filter__form table-filter__sector'
-                  multiple
-                  onChange={(selected) => filterChange('sector', selected)}
-                  options={formOptions.sector}
-                  placeholder="Type of news organization"
-                  selected={filterOptions.sector}
-                />
-              </Form.Group>
-            </Col>
           </Row>
 
           <Row>
             <Col xs={12} md={4}>
               <Form.Group className='table-filter__outlet'>
-                <Form.Label>Search for an news organization</Form.Label>
+                <Form.Label>Search for a local news and info source</Form.Label>
                 <Form.Control type="text" placeholder="Search" 
                   onChange={ e => filterChange('search', [ e.target.value ]) }
                 />

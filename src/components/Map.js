@@ -14,18 +14,19 @@ const Map = (props) => {
   const popupRef = useRef(new mapboxgl.Popup({ offset: 15 }));
   const { source, fill } = props;
   const isMobile = window.innerWidth <= 820 ? true: false;
+  // eslint-disable-next-line
   const center = [-105.358887, 39.113014];
   const zoom = isMobile ? 5 : 6;
   const height = isMobile ? 300 : 450;
-  const bounds = [
-    [36.34551832917399, -109.85188785617123], // southwestern corner of the bounds
-    [41.77721285520039, -100.80719442257701] // northeastern corner of the bounds
-  ].map(d => d.reverse());
+  // const bounds = [
+  //   [36.34551832917399, -109.85188785617123], // southwestern corner of the bounds
+  //   [41.77721285520039, -100.80719442257701] // northeastern corner of the bounds
+  // ].map(d => d.reverse());
 
-  const maxBounds = [
-    [36.3435854367265, -109.85390841448573], // southwestern corner of the bounds
-    [41.77721285520039, -100.80719442257701] // northeastern corner of the bounds
-  ].map(d => d.reverse());
+  // const maxBounds = [
+  //   [36.3435854367265, -109.85390841448573], // southwestern corner of the bounds
+  //   [41.77721285520039, -100.80719442257701] // northeastern corner of the bounds
+  // ].map(d => d.reverse());
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -168,16 +169,15 @@ const Map = (props) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const resetZoom = useCallback((e) => {
-    console.log(e);
-    console.log(mapObj);
-    console.log(mapObj.getZoom());
-    console.log(mapObj.getMinZoom());
-    console.log(mapObj.getMaxZoom());
-    console.log(mapObj.getMaxBounds());
+    // console.log(e);
+    // console.log(mapObj);
+    // console.log(mapObj.getZoom());
+    // console.log(mapObj.getMinZoom());
+    // console.log(mapObj.getMaxZoom());
+    // console.log(mapObj.getMaxBounds());
     mapObj.setZoom(zoom);
-    // mapObj.fitBounds(bounds);
     mapObj.jumpTo({ center });
-  });
+  }, [ mapObj, zoom, center ]);
 
   return (
     <div className='map'>

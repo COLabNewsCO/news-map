@@ -12,8 +12,9 @@ function Census(props) {
 
   const scores = showScores && (
     <div>
-      <p className='summary__intro'><strong>Originality of news stories:</strong> { properties['Original'] } original and { properties['Not Original'] } non-original stories.</p> 
-      <p className='summary__intro'><strong>Locality of news stories:</strong> { properties['Local'] } local and { properties['Not Local'] } non-local stories.</p>
+      <p className="summary__intro"><strong>On a weekday in 2021, researchers found in this county:</strong></p>
+      <p className='summary__intro'>{ properties['Original'] } original and { properties['Not Original'] } non-original stories.</p> 
+      <p className='summary__intro'> { properties['Local'] } local and { properties['Not Local'] } non-local stories.</p>
     </div>
   );
 
@@ -23,7 +24,7 @@ function Census(props) {
         <Col sm='3' md='4' lg='3'>
           <div className="census__number">
             <p className='census__number--num'>{ properties.total_sources }</p>
-            <p className='census__number--description'>news sources</p>
+            <p className='census__number--description'>identified local news and info sources</p>
           </div>
         </Col>
         <Col sm='3' md='4' lg='3'>

@@ -29,8 +29,8 @@ const MissionComponent = ({ data }) => {
         <p className='expanded__mission'>{ data.Description }</p>
       </div>
     )
-    return null;
-   };
+   }
+   return null;
 };
 
 const isCredentialed = (row) => {
@@ -111,7 +111,7 @@ function Details(props) {
         />
 
         <p className="details__note">
-          <span className="details__cred outlet__cred"></span> indicates credentialed outlets.
+          <span className="details__cred outlet__cred"></span> indicates source is a member of the Colorado Press Association and or a COLab partner.
         </p>
       </div>
     );
