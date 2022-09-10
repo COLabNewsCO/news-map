@@ -39,6 +39,8 @@ const ownerType = (t) => {
   return typeDict[t] || 'Unknown/Other';
 };
 
+const cleanSheet = (recs) => recs.filter(r => Object.keys(r).includes('OUTLET') && r.OUTLET.length > 0);
+
 function processMainData(data) {
   data.forEach(row => {
     row['OWTYPE'] = ownerType(row['OWTYPE'])
@@ -76,7 +78,7 @@ async function main() {
     const records = rows.slice(1)
       .map(values => zipObject(headers, values));
     
-    const data = !i ? processMainData(records) : records;
+    const data = !i ? processMainData(records) : cleanSheet(records);
     const fp = 'public/' + outFileNames[i];
 
     fs.writeFileSync(fp, JSON.stringify({ data }));
