@@ -8,11 +8,11 @@ const Tooltip = ({ feature }) => {
     return (
       <div id={`tooltip-${id}`}>
         <h4 className='tooltip__hed'><strong>{ properties.NAME } County</strong></h4>
-        <p className='tooltip__text'><strong>{ properties.total_sources }</strong> identified sources of local news and info.</p>    
+        <p className='tooltip__text'><strong>{ properties.total_sources }</strong> Identified sources of local news and info.</p>    
         <p className='tooltip__text'><strong>On a weekday in 2021, researchers found in this county:</strong></p> 
-        <p className='tooltip__text'>{ properties['Original'] } original and { properties['Not Original'] } non-original stories.</p>
+        <p className='tooltip__text'>{ properties['Original'] } Original and { properties['Not Original'] } non-original stories.</p>
         {/*<p className='tooltip__text'><strong>Locality of news stories:</strong></p>*/}
-        <p className='tooltip__text'>{ properties['Local'] } local and { properties['Not Local'] } non-local stories.</p>
+        <p className='tooltip__text'>{ properties['Local'] } Local and { properties['Not Local'] } non-local stories.</p>
       </div>
     );
   }

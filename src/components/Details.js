@@ -111,7 +111,7 @@ function Details(props) {
         />
 
         <p className="details__note">
-          <span className="details__cred outlet__cred"></span> indicates source is a member of the Colorado Press Association and or a COLab partner.
+          <span className="details__cred outlet__cred"></span> Indicates source is a member of the Colorado Press Association and or a COLab partner.
         </p>
       </div>
     );
