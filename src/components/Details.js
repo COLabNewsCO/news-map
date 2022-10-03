@@ -21,12 +21,17 @@ const sortReach = (rowA, rowB) => {
   }
 };
 
+function createMarkup(m) {
+  return {__html: m };
+}
+
 const MissionComponent = ({ data }) => {
    if (data.MISSION.length) {
     return(
       <div className='expanded'>
         <p className='expanded__mission'>{ data.MISSION }</p>
-        <p className='expanded__mission'>{ data.Description }</p>
+        <p className='expanded__mission' 
+          dangerouslySetInnerHTML={ createMarkup(data.Description) } />
       </div>
     )
    }
