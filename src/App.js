@@ -221,21 +221,18 @@ function App() {
         <Row className='justify-content-md-center'>
           <Col xs={12} sm={6}>
             <h1 className='App__hed bold'>Colorado News Mapping Project</h1>
-            <p className="App__desc">Where do Coloradans find their local news and community information, and what do we know about these sources? This map contains credentialed sources of local journalism — including newspapers, TV and radio stations, and digital news sites — and other sources that share or produce civic information — including community groups, organizational pages, or individuals.</p>
-            <p className="App__desc">This map is not complete, but is a work in progress. It was created by people from Colorado College, the University of Denver, Colorado Media Project, and the Colorado News Collaborative (COLab), Hearken, and others with support from the Online News Association.</p>
+            <p className="App__desc">Where do Coloradans find their local news and community information, and what do we know about these sources? This map contains credentialed sources of local journalism &mdash; including newspapers, TV and radio stations, and digital news sites &mdash; and other sources that share or produce civic information &mdash; including community groups, organizational pages, and individuals.</p>
+            <p className="App__desc">This map is a work in progress. It was created by people from Colorado College, the University of Denver, Colorado Media Project, Hearken, the Colorado News Collaborative (COLab), and others. This work is supported by a grant administered by the Online News Association with support from the Democracy Fund, Knight Foundation, the Inasmuch Foundation, and Scripps Howard Foundation.</p>
 
-            <p className="App__desc">Learn more about the map, methodology, partners, and funders <a href="https://colabnews.co/colorado-news-mapping-project" target='_parent'>here</a>.</p>
+            <p className="App__desc">Learn more about the map, methodology, partners, and funders <a href="https://colabnews.co/colorado-news-mapping-project-method/" target='_parent'>here</a>.</p>
             
             <ul>
-              <li><p className="App__desc"><strong>Hover over each county</strong> to see the number of local information sources identified to date, and the number of original, local news stories produced by some of the news sources in that county, in total,   on a single weekday in 2021.</p>
+              <li><p className="App__desc"><strong>Hover over each county</strong> to see the number of local information sources identified to date, and the number of original, local news stories produced by some of the news sources in that county that researchers counted on a single weekday in 2021. (Counties that don’t show a number of original and local stories hadn’t produced any for the day we researched.)</p>
               </li>
-              <li><p className="App__desc"><strong>Click or tap on a county</strong> to learn more about its news and information ecosystem and demographics, and to see a full list of the news sources we’ve identified to date along with media type, sector, ownership, language, and reach (if we know it).</p></li>
+              <li><p className="App__desc"><strong>Click or tap on a county</strong> to learn more about its news and information ecosystem and demographics, and to see a full list of the news and information sources we’ve identified so far along with media type, sector, ownership, language, and reach (if we know it).</p></li>
             </ul>
 
-            <p className="App_desc"><strong>Did we miss something? Did you find an error?</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY3GCM61wsEVdEUpEJ6x6yErooyerovADATMby-IR7wdtkxQ/viewform" target='_parent'>this form</a> and let us know, so we can add or fix it. NOTE: News sources are placed on the map according to their physical address. Some counties might not show a source serving it because the publication’s address could be in a county next door. </p>
-
-            {/*<div className='map__subhed'><strong>Hover over each county</strong> to see the number of local information sources identified to date, and the number of original, local news stories produced by some of the news sources in that county, in total, on a single weekday in 2021.</div>
-            <div className='map__subhed'>Click or tap on a county to learn more about its news and information ecosystem and demographics, and to see a full list of the news sources we’ve identified to date along with media type, sector, ownership, language, and reach (if we know it).</div>*/}
+            <p className="App_desc"><strong>Did we miss something? Did you find an error?</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY3GCM61wsEVdEUpEJ6x6yErooyerovADATMby-IR7wdtkxQ/viewform" target='_parent'>this form</a> and let us know so we can fix it. NOTE: News sources are placed on the map according to their physical office address, which means some might not appear in counties they also serve.</p>
           </Col>
           
           <Legend />
