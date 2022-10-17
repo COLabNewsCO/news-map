@@ -218,8 +218,8 @@ function App() {
   if (shapeFile) {
     return (
       <Container fluid>
-        <Row className='justify-content-md-center'>
-          <Col xs={12} sm={6}>
+        <Row>
+          <Col xs={12}>
             <h1 className='App__hed bold'>Colorado News Mapping Project</h1>
             <p className="App__desc">Where do Coloradans find their local news and community information, and what do we know about these sources? This map contains credentialed sources of local journalism &mdash; including newspapers, TV and radio stations, and digital news sites &mdash; and other sources that share or produce civic information &mdash; including community groups, organizational pages, and individuals.</p>
             <p className="App__desc">This map is a work in progress. It was created by people from Colorado College, the University of Denver, Colorado Media Project, Hearken, the Colorado News Collaborative (COLab), and others. This work is supported by a grant administered by the Online News Association with support from the Democracy Fund, Knight Foundation, the Inasmuch Foundation, and Scripps Howard Foundation.</p>
