@@ -21,7 +21,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import axios from 'axios';
 import { addData, processSheet, lookupRef } from './utils';
 import { group } from 'd3-array';
-import { initFrame } from '@newswire/frames';
+import { initFrameAndPoll } from '@newswire/frames';
 
 import './App.scss';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
@@ -87,7 +87,7 @@ function App() {
         });
     };
     getData();
-    initFrame();
+    initFrameAndPoll(150);
   }, []);
 
   const mapFilter = (f) => {
