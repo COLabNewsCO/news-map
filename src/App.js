@@ -232,7 +232,7 @@ function App() {
               <li><p className="App__desc"><strong>Click or tap on a county</strong> to learn more about its news and information ecosystem and demographics, and to see a full list of the news and information sources we’ve identified so far along with media type, sector, ownership, language, and reach (if we know it).</p></li>
             </ul>
 
-            <p className="App_desc"><strong>Did we miss something? Did you find an error?</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY3GCM61wsEVdEUpEJ6x6yErooyerovADATMby-IR7wdtkxQ/viewform" target='_parent'>this form</a> and let us know so we can fix it. </p>
+            <p className="App_desc"><strong>Did we miss something? Did you find an error?</strong> Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdY3GCM61wsEVdEUpEJ6x6yErooyerovADATMby-IR7wdtkxQ/viewform" target=“_blank” rel=“noopener noreferrer”>this form</a> and let us know so we can fix it. </p>
           </Col>
           
           <Legend />
